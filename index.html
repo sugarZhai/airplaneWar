@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang='zh'>
+<head>
+    <meta charset='UTF-8'>
+    <title>flight-war designed by JessieZhai</title>
+    <link rel="stylesheet" href="./index.css">
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            list-style:none;
+            user-select:none;
+        }
+    </style>
+</head>
+ 
+<body>
+    <div class="wrap">
+        <!-- 游戏等级 -->
+        <div id="level">
+            <h1>飞机大战 Lv1</h1>
+            <p>简答模式</p>
+            <p>一般模式</p>
+            <p>困难模式</p>
+            <p>地狱模式</p>
+        </div>
+        <!-- 游戏界面 -->
+        <div id="map">
+            <!-- 我军飞机 -->
+            <!-- 敌军飞机1 -->
+            <!-- 敌军飞机2 -->
+            <div class="allFire">
+                <!-- 我军子弹 -->
+            </div>
+        </div>
+        <!-- 游戏得分 -->
+        <div id="score">0</div>
+        <!-- 结束游戏的界面 -->
+        <div id="settlement">
+            <div>最终得分:<span class="totalscore">10</span></div>
+            <div>获得评价:<span class="appraise">青铜</span></div>
+            <button>重新开始</button>
+        </div>
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>

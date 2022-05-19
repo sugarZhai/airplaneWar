@@ -1,0 +1,136 @@
+.wrap{
+    position:relative;
+    width: 400px;
+    height: 600px;
+    margin:10px auto;
+    overflow:hidden;
+}
+/* 游戏等级 */
+#level{
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:1;
+    width:100%;
+    height:100%;
+    font-family:"楷体";
+    background:url(./img/bg_1.jpg)repeat 0/cover;
+}
+#level h1{
+    width:100%;
+    color:#fff;
+    text-align:center;
+    padding:100px 0;
+}
+#level p{
+    text-align:center;
+    padding:10px 20px;
+    letter-spacing:5px;
+    font-weight:bold;
+    background-color:#fff;
+    margin:30px 120px;
+    border-radius:5px;
+    box-shadow:1px 1px 10px 1px #aaa;
+}
+#level p:hover{
+    cursor:pointer;
+    background-color:#4D6BA2;
+    color:#fff;
+}
+/*  游戏界面  */
+#map{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:url(./img/bg_2.jpg)repeat 0/cover;
+}
+#map .plane,/*我军飞机*/
+    .enemy,/*敌军飞机*/
+    .boom,/*敌军飞机爆炸*/
+    .boom2,/*我军飞机爆炸*/
+    .fire{/*我军飞机子弹*/
+        position:absolute;
+}
+#map .plane,.enemy{
+    z-index:5;
+}
+#map .boom{
+    z-index:6;
+    animation : enemyDisappear 0.8s 1;
+    animation-fill-mode : forwards;/*显示最后一个关键帧*/
+}
+#map .boom2{
+    z-index:6;
+    animation : planeDisappear 2s 1;
+    animation-fill-mode : forwards;
+}
+#map .fire{
+    z-index:7;
+}
+/* 敌军消失的动画 */
+@keyframes enemyDisappear {
+    from { opacity : 1; }
+    to{ opacity : 0; }
+}
+/* 我军消失的动画 */
+@keyframes planeDisappear {
+    0% { opacity : 1; }
+    20%{ opacity : 0; }
+    40%{ opacity : 1; }
+    60%{ opacity : 0; }
+    80%{ opacity : 1; }
+    100%{ opacity : 0; }
+}
+/*  游戏得分  */
+#score{
+    display:none;
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:10;
+    padding:10px 20px;
+    color:#fff;
+}
+/* 结束游戏的界面 */
+#settlement{
+    display:none;
+    position:absolute;
+    top:30%;
+    left:0;
+    z-index:100;
+    width:100%;
+    height:35%;
+    font-family:"楷体";
+}
+#settlement div{
+    margin:20px 0;
+    text-align:center;
+    font-size:20px;
+    color:#fff;
+}
+#settlement div span{
+    font-size:24px;
+}
+#settlement div .totalscore{
+    color:red;
+}
+#settlement div .appraise{
+    color:green;
+}
+#settlement button{
+    margin:30px 34% 0;
+    padding:10px 20px;
+    background-color:rgba(255,255,255,.8);
+    letter-spacing : 2px;
+    border:none;
+    font-family:"楷体";
+    font-size:20px;
+    font-weight:bold;
+    border-radius:5px;
+}
+#settlement button:hover{
+    cursor:pointer;
+    background-color:rgba(255,255,255,1);
+}
